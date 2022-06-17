@@ -1,4 +1,4 @@
-# chekpoint 3 - Banco de Dados
+# Chekpoint 3 - Banco de Dados
 
 29/06 - ÚLTIMO GRUPO 5 PARA APRESENTAR
 
