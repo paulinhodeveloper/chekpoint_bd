@@ -111,6 +111,12 @@ VALUES ('PERMUTA');
 
 SELECT * FROM FORMA_PAGAMENTO;
 
+-- -----------------------------------------------------
+-- TABELA ESTOQUE
+-- -----------------------------------------------------
+
+INSERT INTO ESTOQUE (ID_ENTRADA_PRODUTO, DESCRICAO, QUANTIDADE, VALOR_VENDA) 
+VALUES (1, 'CALÇA PRETA JEAN', 1, 80.00 );
 
 -- -----------------------------------------------------
 -- TABELA SAIDA PRODUTO
@@ -119,14 +125,6 @@ SELECT * FROM FORMA_PAGAMENTO;
 INSERT INTO SAIDA_PRODUTO (ID_CLIENTE, ID_FUNCIONARIO, ID_ESTOQUE, ID_FORMA_PAGAMENTO) VALUES (1, 1, 1, 1);
 
 SELECT * FROM SAIDA_PRODUTO;
-
-
--- -----------------------------------------------------
--- TABELA ESTOQUE
--- -----------------------------------------------------
-
-INSERT INTO ESTOQUE (ID_ENTRADA_PRODUTO, DESCRICAO, QUANTIDADE, VALOR_VENDA) 
-VALUES (1, 'CALÇA PRETA JEAN', 1, 80.00 );
 
 
 -- -----------------------------------------------------
@@ -140,5 +138,3 @@ VALUES (1, 'CALÇA PRETA JEAN', 1, 80.00 );
 -- -----------------------------------------------------
 
 -- ALTER TABLE ENTRADA_PRODUTO ADD TAMANHO VARCHAR(2);
-
-
