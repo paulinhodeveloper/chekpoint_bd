@@ -33,11 +33,6 @@ VALUES ('DISTRIBUIDORA DE MALHAS','62932684000117', 'RUA DA MARGARIDA','SANTO AN
 
 SELECT * FROM FORNECEDOR;
 
--- -----------------------------------------------------
--- ALTERAÇÃO DA ENTRADA DE PRODUTO
--- -----------------------------------------------------
-
--- ALTER TABLE ENTRADA_PRODUTO ADD TAMANHO VARCHAR(2);
 
 -- -----------------------------------------------------
 -- TABELA ENTRADA_PRODUTO
@@ -63,16 +58,10 @@ VALUES (3,'JAQUETA PRETA JEAN', 5, 59.99, 'P');
 
 SELECT * FROM ENTRADA_PRODUTO;
 
--- -----------------------------------------------------
--- TABELA CLIENTE
--- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- ALTERAÇÃO DA CLIENTE
+-- TABELA DE CLIENTE
 -- -----------------------------------------------------
-
--- ALTER TABLE CLIENTE ADD CPF_CNPJ VARCHAR(45);
-
 
 INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ) 
  VALUES ('Henry','Pereira','henry@henry.com.br', '9129694324', TRUE, '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Passagem Nazaré', 'Ananindeua', 'PA', '67120560', 'box52', '69959656047' );
@@ -100,6 +89,7 @@ VALUES ('Rosângela Clara','Mendes','rosangela_mendes@robertacorrea.com', '63365
 
 SELECT * FROM CLIENTE;
 
+
 -- -----------------------------------------------------
 -- TABELA FORMA PAGAMENTO
 -- -----------------------------------------------------
@@ -120,3 +110,35 @@ INSERT INTO FORMA_PAGAMENTO (PAGAMENTO)
 VALUES ('PERMUTA');
 
 SELECT * FROM FORMA_PAGAMENTO;
+
+
+-- -----------------------------------------------------
+-- TABELA SAIDA PRODUTO
+-- -----------------------------------------------------
+
+INSERT INTO SAIDA_PRODUTO (ID_CLIENTE, ID_FUNCIONARIO, ID_ESTOQUE, ID_FORMA_PAGAMENTO) VALUES (1, 1, 1, 1);
+
+SELECT * FROM SAIDA_PRODUTO;
+
+
+-- -----------------------------------------------------
+-- TABELA ESTOQUE
+-- -----------------------------------------------------
+
+INSERT INTO ESTOQUE (ID_ENTRADA_PRODUTO, DESCRICAO, QUANTIDADE, VALOR_VENDA) 
+VALUES (1, 'CALÇA PRETA JEAN', 1, 80.00 );
+
+
+-- -----------------------------------------------------
+-- ALTERAÇÃO DA CLIENTE
+-- -----------------------------------------------------
+
+-- ALTER TABLE CLIENTE ADD CPF_CNPJ VARCHAR(45);
+
+-- -----------------------------------------------------
+-- ALTERAÇÃO DA ENTRADA DE PRODUTO
+-- -----------------------------------------------------
+
+-- ALTER TABLE ENTRADA_PRODUTO ADD TAMANHO VARCHAR(2);
+
+
