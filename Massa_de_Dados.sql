@@ -99,3 +99,24 @@ INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUA
 VALUES ('Rosângela Clara','Mendes','rosangela_mendes@robertacorrea.com', '6336566578',false , '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Residencial Jardim Europa', 'Araguaína', 'TO', '67120560', 'sem complemento indicado', '07475518043');
 
 SELECT * FROM CLIENTE;
+
+-- -----------------------------------------------------
+-- TABELA FORMA PAGAMENTO
+-- -----------------------------------------------------
+
+INSERT INTO FORMA_PAGAMENTO (PAGAMENTO) 
+VALUES ('À VISTA');
+
+INSERT INTO FORMA_PAGAMENTO (PAGAMENTO) 
+VALUES ('CARTÃO DEBITO');
+
+INSERT INTO FORMA_PAGAMENTO (PAGAMENTO) 
+VALUES ('CARTÃO CREDITO');
+
+INSERT INTO FORMA_PAGAMENTO (PAGAMENTO) 
+VALUES ('CHEQUE');
+
+INSERT INTO FORMA_PAGAMENTO (PAGAMENTO) 
+VALUES ('PERMUTA');
+
+SELECT * FROM FORMA_PAGAMENTO;
