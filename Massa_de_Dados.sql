@@ -131,9 +131,10 @@ INSERT INTO SAIDA_PRODUTO (ID_CLIENTE, ID_FUNCIONARIO, ID_ESTOQUE, ID_FORMA_PAGA
 SELECT * FROM SAIDA_PRODUTO;
 
 -- -----------------------------------------------------
--- QUERY PARA VIEW
+-- CRIAÇÃO DA VIEW
 -- -----------------------------------------------------
 
+CREATE VIEW vw_HistoricoCompras AS
 SELECT 
     CLIENTE.CPF_CNPJ AS 'DOCUMENTO DO CLIENTE',
     CLIENTE.ID_CLIENTE AS 'ID DO CLIENTE',
@@ -151,9 +152,17 @@ FROM
 INNER JOIN 
 	CLIENTE ON CLIENTE.ID_CLIENTE = SAIDA_PRODUTO.ID_CLIENTE
 INNER JOIN 
-	FUNCIONARIO ON FUNCIONARIO.ID_FUNCIONARIO =SAIDA_PRODUTO.ID_FUNCIONARIO
+	FUNCIONARIO ON FUNCIONARIO.ID_FUNCIONARIO = SAIDA_PRODUTO.ID_FUNCIONARIO
 INNER JOIN 
 	ESTOQUE ON ESTOQUE.ID_ESTOQUE = SAIDA_PRODUTO.ID_ESTOQUE;
+	
+
+-- -----------------------------------------------------
+-- VISUALIZAÇÃO DA VIEW
+-- -----------------------------------------------------
+    
+SELECT * FROM vw_HistoricoCompras;
+
 
 
 -- -----------------------------------------------------
