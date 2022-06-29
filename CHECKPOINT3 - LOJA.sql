@@ -1,8 +1,8 @@
 -- -----------------------------------------------------
 -- Schema CHECKPOINT3
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `CHECKPOINT3` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
-USE `CHECKPOINT3` ;
+CREATE SCHEMA IF NOT EXISTS `CHECKPOINT3`;
+USE `CHECKPOINT3`;
 
 -- -----------------------------------------------------
 -- Table `CHECKPOINT3`.`CLIENTE`
@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS `CHECKPOINT3`.`CLIENTE` (
   `ESTADO` VARCHAR(2) NULL DEFAULT NULL,
   `CEP` VARCHAR(45) NULL DEFAULT NULL,
   `COMPLEMENTO` VARCHAR(45) NULL DEFAULT NULL,
+  `DATA_NASC` DATE NOT NULL,
   PRIMARY KEY (`ID_CLIENTE`));
 
 -- -----------------------------------------------------
@@ -128,9 +129,9 @@ CREATE TABLE IF NOT EXISTS `CHECKPOINT3`.`SAIDA_PRODUTO` (
     FOREIGN KEY (`ID_FUNCIONARIO`)
     REFERENCES `CHECKPOINT3`.`FUNCIONARIO` (`ID_FUNCIONARIO`));
 
--- -----------------------------------------------------
+-- --------------------------------------------------------------------
 -- Placeholder table for view `CHECKPOINT3`.`vw_HistoricoCompras`
--- -----------------------------------------------------
+-- --------------------------------------------------------------------
 
 CREATE VIEW  vw_HistoricoCompras AS
 SELECT 
@@ -156,4 +157,63 @@ INNER JOIN
 INNER JOIN 
 	ESTOQUE ON ESTOQUE.ID_ESTOQUE = SAIDA_PRODUTO.ID_ESTOQUE
 INNER JOIN 
-	ENTRADA_PRODUTO ON ENTRADA_PRODUTO.ID_ENTRADA_PRODUTO = ESTOQUE.ID_ENTRADA_PRODUTO;
+	ENTRADA_PRODUTO ON ENTRADA_PRODUTO.ID_ENTRADA_PRODUTO = ESTOQUE.ID_ENTRADA_PRODUTO;     
+
+-- --------------------------------------------------------------------------
+-- Placeholder table for view `CHECKPOINT3`.`vw_HistoricoFornecedorProduto`
+-- --------------------------------------------------------------------------
+
+CREATE VIEW  vw_HistoricoFornecedorProduto AS
+SELECT 
+	FORNECEDOR.CNPJ_CPF AS 'DOC FORN',
+	FORNECEDOR.NOME_FANTASIA AS 'NOME DO FORN',
+    ENTRADA_PRODUTO.DATA_ENTRADA AS 'DATA DE ENTRADA',
+    ENTRADA_PRODUTO.DESCRICAO AS 'DESCRICAO',
+    ENTRADA_PRODUTO.QUANTIDADE AS 'QUANTIDADE'    
+FROM
+	ENTRADA_PRODUTO
+INNER JOIN 
+	FORNECEDOR ON FORNECEDOR.ID_FORNECEDOR = ENTRADA_PRODUTO.ID_FORNECEDOR
+ 
+ -- --------------------------------------------------------------------------
+-- Placeholder table for view `CHECKPOINT3`.`SP_ANIVERSARIANTES_MES`
+-- --------------------------------------------------------------------------
+    
+DELIMITER //
+CREATE PROCEDURE SP_AniversaioPorMes (
+	IN MES VARCHAR(15)
+)
+BEGIN
+	SELECT
+		CLIENTE.ID_CLIENTE AS 'ID CLIENTE',
+		CONCAT(CLIENTE.NOME, ' ', CLIENTE.SOBRENOME) AS 'Nome',
+        CLIENTE.TELEFONE AS 'Telefone',
+        CLIENTE.EMAIL AS 'E-mail',
+        DATE_FORMAT(DATA_NASC, '%d/%m') AS 'Aniversário'
+	FROM CLIENTE
+    WHERE
+		MONTH(DATA_NASC) = MES
+	ORDER BY
+		MONTH(DATA_NASC) ASC;
+END //
+DELIMITER ;
+
+   -- -------------------------------------------------------------
+-- Placeholder table for view `CHECKPOINT3`.`sp_AtualizaEstoque`
+-- ----------------------------------------------------------------
+    
+DELIMITER //
+CREATE PROCEDURE `SP_AtualizaEstoque`( `ID_PROD` INT, `QTD_COMPRADA` INT, VALOR_UNIT DOUBLE)
+BEGIN
+    DECLARE CONTADOR INT(11);
+    
+    SELECT COUNT(*) INTO CONTADOR FROM ESTOQUE WHERE ID_ENTRADA_PRODUTO = ID_PROD;
+
+    IF CONTADOR >= 0 THEN
+        UPDATE ESTOQUE SET QUANTIDADE = QUANTIDADE + QTD_COMPRADA, VALOR_VENDA = VALOR_UNIT
+        WHERE ID_ENTRADA_PRODUTO = ID_PROD;
+    ELSE
+        INSERT INTO ESTOQUE (ID_ENTRADA_PRODUTO, QUANTIDADE, VALOR_VENDA) VALUES (ID_PROD, QTD_COMPRADA, VALOR_UNIT);
+    END IF;
+END //
+DELIMITER ;
