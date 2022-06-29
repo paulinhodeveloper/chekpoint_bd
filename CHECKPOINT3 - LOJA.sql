@@ -159,28 +159,12 @@ INNER JOIN
 INNER JOIN 
 	ENTRADA_PRODUTO ON ENTRADA_PRODUTO.ID_ENTRADA_PRODUTO = ESTOQUE.ID_ENTRADA_PRODUTO;     
 
--- --------------------------------------------------------------------------
--- Placeholder table for view `CHECKPOINT3`.`vw_HistoricoFornecedorProduto`
--- --------------------------------------------------------------------------
-
-CREATE VIEW  vw_HistoricoFornecedorProduto AS
-SELECT 
-	FORNECEDOR.CNPJ_CPF AS 'DOC FORN',
-	FORNECEDOR.NOME_FANTASIA AS 'NOME DO FORN',
-    ENTRADA_PRODUTO.DATA_ENTRADA AS 'DATA DE ENTRADA',
-    ENTRADA_PRODUTO.DESCRICAO AS 'DESCRICAO',
-    ENTRADA_PRODUTO.QUANTIDADE AS 'QUANTIDADE'    
-FROM
-	ENTRADA_PRODUTO
-INNER JOIN 
-	FORNECEDOR ON FORNECEDOR.ID_FORNECEDOR = ENTRADA_PRODUTO.ID_FORNECEDOR
- 
  -- --------------------------------------------------------------------------
 -- Placeholder table for view `CHECKPOINT3`.`SP_ANIVERSARIANTES_MES`
 -- --------------------------------------------------------------------------
     
 DELIMITER //
-CREATE PROCEDURE SP_AniversaioPorMes (
+CREATE PROCEDURE SP_AniversarioPorMes (
 	IN MES VARCHAR(15)
 )
 BEGIN
@@ -217,3 +201,5 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
+
+select * from vw_HistoricoCompras
