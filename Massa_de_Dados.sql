@@ -33,7 +33,6 @@ VALUES ('DISTRIBUIDORA DE MALHAS','62932684000117', 'RUA DA MARGARIDA','SANTO AN
 
 SELECT * FROM FORNECEDOR;
 
-
 -- -----------------------------------------------------
 -- TABELA ENTRADA_PRODUTO
 -- -----------------------------------------------------
@@ -57,38 +56,35 @@ INSERT INTO ENTRADA_PRODUTO (ID_FORNECEDOR, DESCRICAO, QUANTIDADE, VALOR_COMPRA,
 VALUES (3,'JAQUETA PRETA JEAN', 5, 59.99, 'P', '2022-05-18 09:45:00');
 
 SELECT * FROM ENTRADA_PRODUTO;
-
-
 -- -----------------------------------------------------
 -- TABELA DE CLIENTE
 -- -----------------------------------------------------
 
-INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ) 
- VALUES ('Henry','Donatelo','henry@henry.com.br', '9129694324', TRUE, '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Passagem Nazaré', 'Ananindeua', 'PA', '67120560', 'box52', '69959656047' );
+INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ, DATA_NASC) 
+ VALUES ('Henry','Donatelo','henry@henry.com.br', '9129694324', TRUE, '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Passagem Nazaré', 'Ananindeua', 'PA', '67120560', 'box52', '69959656047', '1997-09-01' );
  
-INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ) 
-VALUES ('Heloise Andrea Caroline','Freitas','heloiseandreafreitas@allurepesquisa.com.br', '8439776125',true , '2022-03-18 10:00:00', '2022-04-22 21:00:00', 'Avenida Wilson Rosado', 'Nova Betânia', 'RN', '67120560', 'Rua da laranjeira', '00422059056');
+INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ, DATA_NASC) 
+VALUES ('Heloise Andrea Caroline','Freitas','heloiseandreafreitas@allurepesquisa.com.br', '8439776125',true , '2022-03-18 10:00:00', '2022-04-22 21:00:00', 'Avenida Wilson Rosado', 'Nova Betânia', 'RN', '67120560', 'Rua da laranjeira', '00422059056','2011-03-15');
 
-INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ) 
-VALUES ('Márcia Mariah Eliane','Pereira','marcia-silveira75@marcofaria.com', '9229703191',true , '2021-03-10 15:00:00', '2022-06-22 11:00:00', 'Passagem Virgem de Nazaré', 'Ananindeua', 'PA', '67120560', 'sem complemento', '73570818004');
+INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ, DATA_NASC) 
+VALUES ('Márcia Mariah Eliane','Pereira','marcia-silveira75@marcofaria.com', '9229703191',true , '2021-03-10 15:00:00', '2022-06-22 11:00:00', 'Passagem Virgem de Nazaré', 'Ananindeua', 'PA', '67120560', 'sem complemento', '73570818004', '2010-03-10');
 
-INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ) 
-VALUES ('Mariah Sueli','Bruna Monteiro','mariah_sueli_monteiro@atualmarcenaria.com.br', '11984970742',true , '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Rua Francisco Ribeiro Júnior', 'Jardim América', 'SP', '12902340', 'próx a floricultura', '23197469003');
+INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ, DATA_NASC) 
+VALUES ('Mariah Sueli','Bruna Monteiro','mariah_sueli_monteiro@atualmarcenaria.com.br', '11984970742',true , '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Rua Francisco Ribeiro Júnior', 'Jardim América', 'SP', '12902340', 'próx a floricultura', '23197469003', '1999-11-01');
 
-INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ) 
-VALUES ('Analu Esther','Fernanda da Cruz','analuestherdacruz@metododerose.org', '8637529582',true , '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Monte Castelo', 'Teresina', 'PI', '64016833', 'perto do parque nacional','37256959036');
+INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ, DATA_NASC) 
+VALUES ('Analu Esther','Fernanda da Cruz','analuestherdacruz@metododerose.org', '8637529582',true , '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Monte Castelo', 'Teresina', 'PI', '64016833', 'perto do parque nacional','37256959036', '2000-08-15');
 
-INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ) 
-VALUES ('Maitê Carolina','Figueiredo','maite.carolina.figueiredo@valparaibaimoveis.com.br', '6928323904',false , '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Três Marias', 'Porto Velho', 'RO', '76812510', 'no bosque 23', '82291963031');
+INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ, DATA_NASC) 
+VALUES ('Maitê Carolina','Figueiredo','maite.carolina.figueiredo@valparaibaimoveis.com.br', '6928323904',false , '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Três Marias', 'Porto Velho', 'RO', '76812510', 'no bosque 23', '82291963031', '1995-10-08');
 
-INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ) 
-VALUES ('Marcos Vinicius','Anthony Viana','marcos-viana87@haldex.com', '49998063560',true , '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Servidão Manoel dos Santos', 'Navegantes', 'SC', '88371009', 'rua sem saída', '08939272013');
+INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ, DATA_NASC) 
+VALUES ('Marcos Vinicius','Anthony Viana','marcos-viana87@haldex.com', '49998063560',true , '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Servidão Manoel dos Santos', 'Navegantes', 'SC', '88371009', 'rua sem saída', '08939272013', '1995-01-01');
 
-INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ) 
-VALUES ('Rosângela Clara','Mendes','rosangela_mendes@robertacorrea.com', '6336566578',false , '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Residencial Jardim Europa', 'Araguaína', 'TO', '67120560', 'sem complemento indicado', '07475518043');
+INSERT INTO CLIENTE (NOME, SOBRENOME, EMAIL, TELEFONE, ATIVO, DATA_CRIACAO, ATUALIZACAO, LOGRADOURO, CIDADE, ESTADO, CEP, COMPLEMENTO, CPF_CNPJ, DATA_NASC) 
+VALUES ('Rosângela Clara','Mendes','rosangela_mendes@robertacorrea.com', '6336566578',false , '2022-05-20 10:00:00', '2022-05-22 19:00:00', 'Residencial Jardim Europa', 'Araguaína', 'TO', '67120560', 'sem complemento indicado', '07475518043','1998-05-22');
 
 SELECT * FROM CLIENTE;
-
 
 -- -----------------------------------------------------
 -- TABELA FORMA PAGAMENTO
@@ -116,7 +112,7 @@ SELECT * FROM FORMA_PAGAMENTO;
 -- -----------------------------------------------------
 
 INSERT INTO ESTOQUE (ID_ENTRADA_PRODUTO, DESCRICAO, QUANTIDADE, VALOR_VENDA) 
-VALUES (1, 'CALÇA PRETA JEAN', 1, 80.00 );
+VALUES (1, 'CALÇA PRETA JEAN', 10, 80.00 );
 
 INSERT INTO ESTOQUE (ID_ENTRADA_PRODUTO, DESCRICAO, QUANTIDADE, VALOR_VENDA) 
 VALUES (2, 'CALÇA PRETA JEAN', 2, 160.00 );
@@ -126,6 +122,8 @@ VALUES (3,'CALÇA ROSA JEAN', 3, 150.00);
 
 INSERT INTO ESTOQUE (ID_ENTRADA_PRODUTO, DESCRICAO, QUANTIDADE, VALOR_VENDA) 
 VALUES (4,'CALÇA ROSA JEAN', 2, 100.00);
+
+SELECT * FROM ESTOQUE;
 
 -- -----------------------------------------------------
 -- TABELA SAIDA PRODUTO
@@ -139,17 +137,6 @@ INSERT INTO SAIDA_PRODUTO (ID_CLIENTE, ID_FUNCIONARIO, ID_ESTOQUE, ID_FORMA_PAGA
 
 INSERT INTO SAIDA_PRODUTO (ID_CLIENTE, ID_FUNCIONARIO, ID_ESTOQUE, ID_FORMA_PAGAMENTO, DATA_SAIDA)VALUES (4, 4, 4, 4, '2022-06-28 10:58:00');
 
+SELECT * FROM SAIDA_PRODUTO;
 
 
--- -----------------------------------------------------
--- ALTERAÇÃO DA CLIENTE
--- -----------------------------------------------------
-
--- ALTER TABLE CLIENTE ADD CPF_CNPJ VARCHAR(45);
-
-
--- -----------------------------------------------------
--- ALTERAÇÃO DA ENTRADA DE PRODUTO
--- -----------------------------------------------------
-
--- ALTER TABLE ENTRADA_PRODUTO ADD TAMANHO VARCHAR(2);
