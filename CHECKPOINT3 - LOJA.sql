@@ -183,6 +183,23 @@ END //
 DELIMITER ;
 
    -- -------------------------------------------------------------
+-- Placeholder table for view `CHECKPOINT3`.`vw_AuditoriaCliente`
+-- ---------------------------------------------------------------
+
+CREATE VIEW CHECKPOINT3.vw_AuditoriaCliente AS
+    SELECT 
+        CHECKPOINT3.CLIENTE.ID_CLIENTE AS ID CLIENTE,
+        CONCAT(CHECKPOINT3.CLIENTE.NOME,
+                '  ',
+                CHECKPOINT3.CLIENTE.SOBRENOME) AS NOME,
+        DATE_FORMAT(CHECKPOINT3.CLIENTE.DATA_CRIACAO,
+                '%d/%m/%Y %T') AS DATA DO CADASTRO,
+        DATE_FORMAT(CHECKPOINT3.CLIENTE.ATUALIZACAO,
+                '%d/%m/%Y %T') AS ÚLTIMA ATUALIZAÇÃO DO CADASTRO
+    FROM
+        CHECKPOINT3.CLIENTE
+
+   -- -------------------------------------------------------------
 -- Placeholder table for view `CHECKPOINT3`.`sp_AtualizaEstoque`
 -- ----------------------------------------------------------------
     
@@ -202,4 +219,3 @@ BEGIN
 END //
 DELIMITER ;
 
-select * from vw_HistoricoCompras
